@@ -8,7 +8,7 @@ app.use(express.urlencoded({extended: false}));
 //Database connection
 const DB = "mongodb+srv://admin:admin@cluster0.lab0nb1.mongodb.net/?retryWrites=true&w=majority";
 mongoose.connect(DB).then(() => {
-    console.log('connection successful');
+    console.log('Database connection successful');
 }).catch((err) => {
     console.log(err);
 });
@@ -52,6 +52,7 @@ app.get('/register', function (req, res) {
 //Port Number
 port = 3000;
 //Listen to the port number
-app.listen(port);
+app.listen(port,()=>{
 //Sever link
-console.log(`Server is running at http://localhost:${port}/`);
+    console.log(`Server is running at http://localhost:${port}/`);
+});
