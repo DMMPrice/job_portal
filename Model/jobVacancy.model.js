@@ -18,4 +18,5 @@ const jobVacancySchema = new mongoose.Schema({
         required: true
     },
 });
-exports.jobVacancy = mongoose.model('jobVacancy', jobVacancySchema);
+const jobVacancy = mongoose.model('jobVacancy', jobVacancySchema);
+module.exports = jobVacancy;

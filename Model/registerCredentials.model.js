@@ -23,4 +23,5 @@ const registerCredentialsSchema = new mongoose.Schema({
     }
 });
 
-exports.registerCredentials = mongoose.model('registerCredentials', registerCredentialsSchema);
+const registerCredentials = mongoose.model('registerCredentials', registerCredentialsSchema);
+module.exports = registerCredentials;
