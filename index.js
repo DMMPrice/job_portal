@@ -20,14 +20,17 @@ app.get('/about', function (req, res) {
     res.sendFile(htmlFile);
 })
 app.get('/stu-log', function (req, res) {
-    const htmlFile = path.join(__dirname, '/Views', '/stulog.html');
+    const htmlFile = path.join(__dirname, '/Views', '/student_log.html');
     res.sendFile(htmlFile);
 })
 app.get('/registration', function (req, res) {
-    const htmlFile = path.join(__dirname, '/Views', '/registrationstu.html');
+    const htmlFile = path.join(__dirname, '/Views', '/student_registration.html');
     res.sendFile(htmlFile);
 })
-
+app.get('/test', function (req, res) {
+    const htmlFile = path.join(__dirname, '/Views', '/test.html');
+    res.sendFile(htmlFile);
+})
 
 //Server Running URL
 port = 5050;
