@@ -1,0 +1,47 @@
+#body {
+  background-color: #24262b;
+  background-size: cover;
+}
+.container {
+  display: flex;
+  display: grid;
+  margin: 50px;
+  padding: 20px;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-auto-rows: 200px;
+  grid-auto-columns: 100px;
+  justify-content: center;
+}
+.item1 {
+  background-image: url("../images/job5.jpg");
+  background-size: cover;
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 2;
+  grid-row-end: 7;
+  border-radius: 30px;
+}
+.item2 {
+  padding: 10px 15px 10px 10px;
+  background-color: transparent;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 2;
+  grid-row-end: 7;
+}
+#item3 {
+  text-align: center;
+
+  font-size: 70px;
+  color: black;
+}
+#apply {
+  color: aliceblue;
+  font-size: medium;
+  font-weight: 500;
+}
+#index {
+  position: absolute;
+  left: 90%;
+}

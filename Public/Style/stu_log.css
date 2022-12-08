@@ -1,0 +1,16 @@
+body {
+  background-image: url("../images/job28.jpg");
+  background-size: cover;
+  margin: 10px;
+  padding: 20px;
+  opacity: 85%;
+}
+form {
+  background-color: ghostwhite;
+  margin-top: 12rem;
+  margin-left: 30rem;
+  margin-right: 30rem;
+  padding: 30px;
+  border-radius: 20px;
+  font-weight: 600;
+}
