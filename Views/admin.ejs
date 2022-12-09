@@ -29,30 +29,57 @@
         <a class="active" href="/admin">Jobs</a>
         <a href="#">Candidates Applied</a>
     </div>
-    <table class="table">
-        <thead>
-        <tr>
-            <th scope="col">#</th>
-            <th scope="col">Company Name</th>
-            <th scope="col">Position</th>
-            <th scope="col">CTC</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-            <td>1</td>
-            <td>ADB</td>
-            <td>HR</td>
-            <td>20 LPA</td>
-        </tr>
-        <tr>
-            <td>2</td>
-            <td>ACD</td>
-            <td>SDE</td>
-            <td>12 LPA</td>
-        </tr>
-        </tbody>
-    </table>
-</div>
+    <div class="content">
+        <p>
+            <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button"
+               aria-expanded="false"
+               aria-controls="collapseExample">
+                Post Job
+            </a>
+        </p>
+        <div class="collapse" id="collapseExample">
+            <div class="card card-body">
+                <form action="/ad-post" method="POST">
+                    <div class="mb-3">
+                        <label for="Company Name" class="form-label">Company Name</label>
+                        <input type="text" class="form-control" id="" name="companyName">
+                    </div>
+                    <div class=" mb-3">
+                        <label for="jobDesc" class="form-label">Position</label>
+                        <input cols="30" rows="10" class="form-control" name="position">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPosition" class="form-label">Job Vacancy</label>
+                        <input type="text" class="form-control" id="exampleInputDescription" name="jobVacancy">
+                    </div>
+                    <div class="mb-3">
+                        <label for="CTC" class="form-label">CTC</label>
+                        <input type="text" class="form-control" id="CTC" name="CTC">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">Company Name</th>
+                <th scope="col">Vacancy</th>
+                <th scope="col">Position</th>
+                <th scope="col">CTC</th>
+            </tr>
+            </thead>
+            <tbody>
+            <% jobList.forEach(vacancies =>{ %>
+                <tr>
+                    <td><%= vacancies.companyName %></td>
+                    <td><%= vacancies.jobVacancy %></td>
+                    <td><%= vacancies.position %></td>
+                    <td><%= vacancies.ctc %></td>
+                </tr>
+            <% }) %>
+            </tbody>
+        </table>
+    </div>
 </body>
 </html>

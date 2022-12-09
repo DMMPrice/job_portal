@@ -26,10 +26,6 @@
     color: white;
 }
 
-.table {
-    margin-left: 200px;
-}
-
 /* Links on mouse-over */
 
 .sidebar a:hover:not(.active) {
