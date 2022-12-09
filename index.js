@@ -7,6 +7,7 @@ const app = express();
 // Using Database models
 const jobVacancy = require('./Model/jobVacancy.model');
 
+
 //Database connection
 const connectionParams = {
     useNewUrlParser: true,
@@ -48,7 +49,8 @@ app.get('/registration', function (req, res) {
     res.sendFile(htmlFile);
 })
 
-app.get('/admin', function (req, res) {
+// Showing the query results in the job posting page
+app.get('/admin', async function (req, res) {
     // Remember that table name should be same for the table name
     // In this case the table name is jobvacancies
     jobVacancy.find({}, function (err, jobvacancies) {
@@ -57,8 +59,11 @@ app.get('/admin', function (req, res) {
         })
     });
 })
-
+app.get('/candidate-post', function (req, res) {
+    res.render('candidates');
+})
 //Server posting links
+// Admin Page Login Credentials
 app.post('/stu-log', function (req, res) {
     const loginCredentials = req.body;
     if (loginCredentials.email === 'ghoshaniruddha2003@gmail.com'
@@ -69,6 +74,20 @@ app.post('/stu-log', function (req, res) {
     }
 })
 
+app.post('/job-post', function (req, res) {
+    const jobvacancies = new jobVacancy;
+    jobvacancies.companyName = req.body.companyname;
+    jobvacancies.position = req.body.position;
+    jobvacancies.jobVacancy = req.body.jobVacancy;
+    jobvacancies.ctc = req.body.CTC;
+    jobvacancies.save((err, data) => {
+        if (err) {
+            console.error(err);
+        } else {
+            res.redirect('/admin')
+        }
+    });
+})
 //Server Running URL
 
 port = 5050;

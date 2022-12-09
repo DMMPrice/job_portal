@@ -1,7 +1,19 @@
 const mongoose = require('mongoose');
 
 const candidateDetailsSchema = new mongoose.Schema({
-    candidateName: {
+    firstName: {
+        type: String,
+        required: true
+    },
+    lastName: {
+        type: String,
+        required: true
+    },
+    email:{
+       type:String,
+       required: true
+    },
+    city: {
         type: String,
         required: true
     },
@@ -9,19 +21,15 @@ const candidateDetailsSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    city: {
-        type: String,
-        required: true
-    },
     resume: {
         type: String,
         required: true
     },
-    gitHub: {
+    linkedIN: {
         type: String,
         required: true
     },
-    linkedIN: {
+    gitHub: {
         type: String,
         required: true
     },
