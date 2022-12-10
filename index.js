@@ -3,9 +3,12 @@ const path = require('path');
 const fs = require('fs');
 const mongoose = require('mongoose');
 const app = express();
+// Using the exported admin routes
+const admin_routes = require('./Controller/Routes/admin.routes');
 
 // Using Database models
 const jobVacancy = require('./Model/jobVacancy.model');
+const candidateDetails = require('./Model/candidateDetails.model');
 
 
 //Database connection
@@ -49,44 +52,31 @@ app.get('/registration', function (req, res) {
     res.sendFile(htmlFile);
 })
 
-// Showing the query results in the job posting page
-app.get('/admin', async function (req, res) {
-    // Remember that table name should be same for the table name
-    // In this case the table name is jobvacancies
-    jobVacancy.find({}, function (err, jobvacancies) {
-        res.render('admin', {
-            jobList: jobvacancies,
-        })
-    });
-})
+
 app.get('/candidate-post', function (req, res) {
     res.render('candidates');
 })
 //Server posting links
 // Admin Page Login Credentials
-app.post('/stu-log', function (req, res) {
-    const loginCredentials = req.body;
-    if (loginCredentials.email === 'ghoshaniruddha2003@gmail.com'
-        && loginCredentials.password === 'Babai@6157201') {
-        res.redirect('/admin')
-    } else {
-        res.redirect('/')
-    }
-})
+app.use('/', admin_routes);
 
-app.post('/job-post', function (req, res) {
-    const jobvacancies = new jobVacancy;
-    jobvacancies.companyName = req.body.companyname;
-    jobvacancies.position = req.body.position;
-    jobvacancies.jobVacancy = req.body.jobVacancy;
-    jobvacancies.ctc = req.body.CTC;
-    jobvacancies.save((err, data) => {
+app.post('/respost',function (req, res){
+    const candidateDetail= new candidateDetails;
+    candidateDetail.firstName=req.body.firstname;
+    candidateDetail.lastName=req.body.lastname;
+    candidateDetail.email=req.body.email;
+    candidateDetail.city=req.body.city;
+    candidateDetail.state=req.body.state;
+    candidateDetail.resume=req.body.resume;
+    candidateDetail.linkedIN=req.body.linkedIN;
+    candidateDetail.gitHub=req.body.github;
+    candidateDetail.save((err,data) => {
         if (err) {
             console.error(err);
         } else {
-            res.redirect('/admin')
+            res.redirect('/')
         }
-    });
+    })
 })
 //Server Running URL
 

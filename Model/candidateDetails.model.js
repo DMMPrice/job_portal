@@ -34,4 +34,5 @@ const candidateDetailsSchema = new mongoose.Schema({
         required: true
     },
 });
-exports.candidateDetails = mongoose.model('candidateDetails', candidateDetailsSchema);
+const candidateDetails = mongoose.model('candidateDetails', candidateDetailsSchema);
+module.exports = candidateDetails;

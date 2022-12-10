@@ -1,116 +1,13 @@
 <%- include('./includes/header') %>
 <!--Adding the header content-->
 <div class="content">
-    <p>
-        <a class="btn btn-primary" data-bs-toggle="collapse" href="#jobPost" role="button"
-           aria-expanded="false"
-           aria-controls="collapseExample">
-            Add Candidate
-        </a>
-    </p>
-    <div class="collapse" id="jobPost">
-        <div class="card card-body">
-            <div class="container">
-                <div class="item1" id="item3"></div>
-                <div class="item2" id="item4">
-                    <p id="apply">Apply for Job</p>
-                    <form method="post" action="/candidateDetails">
-                        <div class="row">
-                            <div class="col">
-                                <input type="text" class="form-control" placeholder="First name" aria-label="First name"
-                                       name="firstName"
-                                       required>
-                            </div>
-                            <div class="col">
-                                <input type="text" class="form-control" placeholder="Last name" aria-label="Last name"
-                                       name="lastName"
-                                       required>
-                            </div>
-                        </div>
-                        <div class="mb-3">
-                            <label for="exampleInputEmail1" class="form-label" id="apply">Email address</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1"
-                                   aria-describedby="emailHelp"
-                                   name="email" required>
-                        </div>
-                        <div class="col-md-6">
-                            <label for="validationCustom03" class="form-label" id="apply">City</label>
-                            <input type="text" class="form-control" id="validationCustom03"
-                                   name="city" required>
-                        </div>
-                        <div class="col-md-3">
-                            <label for="validationCustom04" class="form-label" id="apply">State</label>
-                            <select class="form-select" id="validationCustom04"
-                                    name="state"required>
-                                <option selected disabled value="">Choose...</option>
-                                <option>Andhra Pradesh</option>
-                                <option>Arunachal Pradesh</option>
-                                <option>Assam</option>
-                                <option>Bihar</option>
-                                <option>Chhattisgarh</option>
-                                <option>Goa</option>
-                                <option>Gujarat</option>
-                                <option>Haryana</option>
-                                <option>Himachal Pradesh</option>
-                                <option>Jharkhand</option>
-                                <option>Karnataka</option>
-                                <option>Kerala</option>
-                                <option>Madhya Pradesh</option>
-                                <option>Maharashtra</option>
-                                <option>Manipur</option>
-                                <option>Meghalaya</option>
-                                <option>Mizoram</option>
-                                <option>Nagaland</option>
-                                <option>Odisha</option>
-                                <option>Punjab</option>
-                                <option>Rajasthan</option>
-                                <option>Sikkim</option>
-                                <option>Tamil Nadu</option>
-                                <option>Telangana</option>
-                                <option>Tripura</option>
-                                <option>Uttarakhand</option>
-                                <option>Uttar Pradesh</option>
-                                <option>West Bengal</option>
-                            </select>
-                            <div class="invalid-feedback">
-                                Please select a valid state.
-                            </div>
-                        </div>
-                        <label for="basic-url" class="form-label" id="apply">Resume</label>
-                        <div class="input-group mb-3">
-                            <span class="input-group-text" id="basic-addon3">Resume Link</span>
-                            <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3"
-                                   name="resume"
-                                   required>
-                        </div>
-                        <label for="basic-url" class="form-label" id="apply">LinkedIn</label>
-                        <div class="input-group mb-3">
-                            <span class="input-group-text" id="basic-addon3">LinkedIn Profile Link</span>
-                            <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3"
-                                   name="linkedIN"
-                                   required>
-                        </div>
-                        <label for="basic-url" class="form-label" id="apply">Github</label>
-                        <div class="input-group mb-3">
-                            <span class="input-group-text" id="basic-addon3">GitHub profile link</span>
-                            <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3"
-                                   name="gitHub"
-                                   required>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Submit</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 <table class="table">
     <thead>
     <tr>
         <th scope="col">Candidate Name</th>
-        <th scope="col">Vacancy</th>
-        <th scope="col">Position</th>
-        <th scope="col">CTC</th>
+        <th scope="col">Email</th>
+        <th scope="col">State</th>
+        <th scope="col">City</th>
     </tr>
     </thead>
     <tbody>
