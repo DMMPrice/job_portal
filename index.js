@@ -4,7 +4,9 @@ const fs = require('fs');
 const mongoose = require('mongoose');
 const app = express();
 // Using the exported admin routes
-const admin_routes = require('./Controller/Routes/admin.routes');
+const admin_routes_post = require('./Controller/Routes/admin.routes.post');
+const admin_routes_get = require('./Controller/Routes/admin.routes.get');
+
 
 // Using Database models
 const jobVacancy = require('./Model/jobVacancy.model');
@@ -53,31 +55,12 @@ app.get('/registration', function (req, res) {
 })
 
 
-app.get('/candidate-post', function (req, res) {
-    res.render('candidates');
-})
 //Server posting links
 // Admin Page Login Credentials
-app.use('/', admin_routes);
+app.use('/', admin_routes_get);
+app.use('/', admin_routes_post);
 
-app.post('/respost',function (req, res){
-    const candidateDetail= new candidateDetails;
-    candidateDetail.firstName=req.body.firstname;
-    candidateDetail.lastName=req.body.lastname;
-    candidateDetail.email=req.body.email;
-    candidateDetail.city=req.body.city;
-    candidateDetail.state=req.body.state;
-    candidateDetail.resume=req.body.resume;
-    candidateDetail.linkedIN=req.body.linkedIN;
-    candidateDetail.gitHub=req.body.github;
-    candidateDetail.save((err,data) => {
-        if (err) {
-            console.error(err);
-        } else {
-            res.redirect('/')
-        }
-    })
-})
+
 //Server Running URL
 
 port = 5050;

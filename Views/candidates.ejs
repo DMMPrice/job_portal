@@ -1,19 +1,80 @@
 <%- include('./includes/header') %>
 <!--Adding the header content-->
 <div class="content">
-<table class="table">
-    <thead>
-    <tr>
-        <th scope="col">Candidate Name</th>
-        <th scope="col">Email</th>
-        <th scope="col">State</th>
-        <th scope="col">City</th>
-    </tr>
-    </thead>
-    <tbody>
-
-    </tbody>
-</table>
+    <p>
+        <a class="btn btn-primary" data-bs-toggle="collapse" href="#candidatedetails" role="button"
+           aria-expanded="false"
+           aria-controls="collapseExample">
+            Post Job
+        </a>
+    </p>
+    <div class="collapse" id="candidatedetails">
+        <div class="card card-body">
+            <form action="/detpost" method="POST">
+                <div class="mb-3">
+                    <label for="Company Name" class="form-label">First Name</label>
+                    <input type="text" class="form-control" id="" name="firstName" required>
+                </div>
+                <div class="mb-3">
+                    <label for="Company Name" class="form-label">Last Name</label>
+                    <input type="text" class="form-control" id="" name="lastName" required>
+                </div>
+                <div class=" mb-3">
+                    <label for="jobDesc" class="form-label">Email</label>
+                    <input cols="30" rows="10" class="form-control" name="email" required>
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputPosition" class="form-label">City</label>
+                    <input type="text" class="form-control" id="exampleInputDescription" name="city" required>
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputPosition" class="form-label">State</label>
+                    <input type="text" class="form-control" id="exampleInputDescription" name="state" required>
+                </div>
+                <div class="mb-3">
+                    <label for="CTC" class="form-label">Resume</label>
+                    <input type="text" class="form-control" id="CTC" name="resume" required>
+                </div>
+                <div class="mb-3">
+                    <label for="CTC" class="form-label">LinkedIN Profile</label>
+                    <input type="text" class="form-control" id="CTC" name="LinkedIN" required>
+                </div>
+                <div class="mb-3">
+                    <label for="CTC" class="form-label">GitHub Profile</label>
+                    <input type="text" class="form-control" id="CTC" name="GitHub" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">First Name</th>
+            <th scope="col">Last Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">State</th>
+            <th scope="col">City</th>
+            <th scope="col">Resume</th>
+            <th scope="col">Github</th>
+            <th scope="col">Linked IN</th>
+        </tr>
+        </thead>
+        <tbody>
+        <% candidatelist.forEach(details =>{ %>
+            <tr>
+                <td><%= details.firstName %></td>
+                <td><%= details.lastName %></td>
+                <td><%= details.email %></td>
+                <td><%= details.state %></td>
+                <td><%= details.city %></td>
+                <td><a href="<%= details.resume %>"> Resume </a></td>
+                <td><a href="<%= details.gitHub %>"> GitHub </a></td>
+                <td><a href="<%= details.linkedIN %>"> Profile </a></td>
+            </tr>
+        <% }) %>
+        </tbody>
+    </table>
 </div>
 <!--Adding the footer content-->
 <%- include('./includes/footer') %>
