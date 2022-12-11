@@ -4,13 +4,17 @@
     padding: 0;
     box-sizing: border-box;
 }
+#body{
+	background-color: #24262b;
+}
 .carousel-item img{
-    width: 100%;
+    
     height: 97vh;
+	
 }
 #index{
     position:absolute;
-	left:85%;
+	left:83%;
 }
 
 body{
