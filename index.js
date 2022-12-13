@@ -50,8 +50,18 @@ app.get('/stu-log', function (req, res) {
 })
 
 app.get('/registration', function (req, res) {
-    const htmlFile = path.join(__dirname, '/Views', '/student_registration.html');
-    res.sendFile(htmlFile);
+    jobVacancy.find({}, function (err, jobvacancies) {
+        res.render('student_registration', {
+            jobList: jobvacancies,
+        })
+    });
+})
+app.get('/stu-talent', function (req, res){
+    jobVacancy.find({}, function (err, jobvacancies) {
+        res.render('student_talent', {
+            jobList: jobvacancies,
+        })
+    });
 })
 
 

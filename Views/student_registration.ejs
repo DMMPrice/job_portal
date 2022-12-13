@@ -123,8 +123,25 @@
                     <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3"
                            name="github" required>
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <label for="basic-url" class="form-label" id="apply">Job Title</label>
+                <select class="form-select" id="validationCustom04" required name="jobTitle">
+                    <option selected disabled value="">Choose...</option>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <% jobList.forEach(vacancies =>{ %>
+                        <option><%= vacancies.companyName %></option>
+                <% }) %>
+                </select>
+                <label for="basic-url" class="form-label" id="apply">Job Position</label>
+                <select class="form-select" id="validationCustom04" required name="jobPosition">
+                    <option selected disabled value="">Choose...</option>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <% jobList.forEach(vacancies =>{ %>
+                        <option><%= vacancies.position %></option>
+                <% }) %>
+                </select>
+                <label></label>
             </form>
+                <button type="submit" class="btn btn-primary">Submit</button>
             </form>
         </div>
     </div>

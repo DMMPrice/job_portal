@@ -5,7 +5,7 @@
         <a class="btn btn-primary" data-bs-toggle="collapse" href="#candidatedetails" role="button"
            aria-expanded="false"
            aria-controls="collapseExample">
-            Post Job
+            Add Candidate
         </a>
     </p>
     <div class="collapse" id="candidatedetails">
@@ -43,6 +43,14 @@
                     <label for="CTC" class="form-label">GitHub Profile</label>
                     <input type="text" class="form-control" id="CTC" name="GitHub" required>
                 </div>
+                <div class="mb-3">
+                    <label for="CTC" class="form-label">Job Title</label>
+                    <input type="text" class="form-control" id="CTC" name="jobTitle" required>
+                </div>
+                <div class="mb-3">
+                    <label for="CTC" class="form-label">Job Position</label>
+                    <input type="text" class="form-control" id="CTC" name="jobPosition" required>
+                </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>
         </div>
@@ -55,6 +63,8 @@
             <th scope="col">Email</th>
             <th scope="col">State</th>
             <th scope="col">City</th>
+            <th scope="col">Job Title</th>
+            <th scope="col">Job Position</th>
             <th scope="col">Resume</th>
             <th scope="col">Github</th>
             <th scope="col">Linked IN</th>
@@ -68,6 +78,8 @@
                 <td><%= details.email %></td>
                 <td><%= details.state %></td>
                 <td><%= details.city %></td>
+                <td><%= details.jobtitle %></td>
+                <td><%= details.jobposition %></td>
                 <td><a href="<%= details.resume %>"> Resume </a></td>
                 <td><a href="<%= details.gitHub %>"> GitHub </a></td>
                 <td><a href="<%= details.linkedIN %>"> Profile </a></td>

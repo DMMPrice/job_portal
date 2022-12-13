@@ -27,6 +27,8 @@ router.post("/repost", function (req, res) {
     candidateDetail.resume = req.body.resume;
     candidateDetail.linkedIN = req.body.linkedIN;
     candidateDetail.gitHub = req.body.github;
+    candidateDetail.jobtitle = req.body.jobTitle;
+    candidateDetail.jobposition = req.body.jobPosition;
     candidateDetail.save((err, data) => {
         if (err) {
             console.error(err);
@@ -45,6 +47,8 @@ router.post("/detpost", function (req, res) {
     candidateDetail.resume = req.body.resume;
     candidateDetail.linkedIN = req.body.LinkedIN;
     candidateDetail.gitHub = req.body.GitHub;
+    candidateDetail.jobtitle = req.body.jobTitle;
+    candidateDetail.jobposition = req.body.jobPosition;
     candidateDetail.save((err, data) => {
         if (err) {
             console.error(err);

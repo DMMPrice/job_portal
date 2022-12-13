@@ -9,9 +9,9 @@ const candidateDetailsSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    email:{
-       type:String,
-       required: true
+    email: {
+        type: String,
+        required: true
     },
     city: {
         type: String,
@@ -30,6 +30,14 @@ const candidateDetailsSchema = new mongoose.Schema({
         required: true
     },
     gitHub: {
+        type: String,
+        required: true
+    },
+    jobtitle: {
+        type: String,
+        required: true
+    },
+    jobposition: {
         type: String,
         required: true
     },
