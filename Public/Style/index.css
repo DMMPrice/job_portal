@@ -12,11 +12,64 @@
     height: 97vh;
 	
 }
+#head1{
+	width: 70%;
+	font-size: 400%;
+}
+
+#headline1{
+	position: absolute;
+	left:12%;
+	top:35%;
+	
+}
+#head3{
+	width:60%;
+	font-size: 400%;
+	
+}
+#headline{
+	position:absolute;
+	left:12%;
+	top:30%;
+}
 #index{
     position:absolute;
 	left:83%;
 }
-
+#btn{
+	width:22%;
+	font-size: 125%;
+	
+	opacity: 70%;
+}
+#btn1{
+	opacity: 75%;
+}
+#btn2{
+	opacity: 80%;
+	background-color: rgb(39, 163, 167);
+	border-color:rgb(39, 163, 167) ;
+}
+#best{
+	color: aquamarine;
+}
+#jobs{
+	color:rgba(102, 205, 205, 0.986);
+}
+#head4{
+	width:80%;
+	font-size: 400%;
+}
+#matha{
+	color:rgba(167, 213, 213, 0.986);
+}
+#pagol{
+	color: rgba(7, 57, 88, 0.941);
+}
+.col{
+	width: 5px;
+}
 body{
 	line-height: 1.5;
 	font-family: 'Poppins', sans-serif;
