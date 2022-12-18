@@ -6,7 +6,7 @@ const candidateDetails = require("../../Model/candidateDetails.model");
 
 // Configuring the router
 const router = express.Router();
-router.post("/stu-log", async function (req, res) {
+router.post("/ad-log", async function (req, res) {
     const loginCredentials = req.body;
     if (
         loginCredentials.email === "ghoshaniruddha2003@gmail.com" &&

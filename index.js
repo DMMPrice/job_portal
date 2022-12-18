@@ -44,7 +44,7 @@ app.get('/about', function (req, res) {
     res.sendFile(htmlFile);
 })
 
-app.get('/stu-log', function (req, res) {
+app.get('/ad-log', function (req, res) {
     const htmlFile = path.join(__dirname, '/Views', '/student_log.html');
     res.sendFile(htmlFile);
 })
